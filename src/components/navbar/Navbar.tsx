@@ -1,10 +1,11 @@
 import { useState } from "react";
 import logo from "@/assets/logo.png";
 import Links from "./Links";
+import { SelectedPage } from "@/shared/types";
 
 type Props = {
-  selectedPage: string;
-  setSelectedPage: (value: string) => void;
+  selectedPage: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
 };
 
 const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
@@ -14,7 +15,10 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
       <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
-            <img src={logo} alt="logo" />
+            <div className="flex gap-1">
+              <img src={logo} alt="logo" />
+              <h1 className="text-xl font-bold text-secondary-300">SCISSOR</h1>
+            </div>
 
             {/* RIGHT SIDE DIV */}
             <div className={`${flexBetween} w-full `}>
