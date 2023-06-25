@@ -2,6 +2,7 @@ import { useState } from "react";
 import logo from "@/assets/logo.png";
 import Links from "./Links";
 import { SelectedPage } from "@/shared/types";
+import { Link } from "react-router-dom";
 
 type Props = {
   selectedPage: SelectedPage;
@@ -12,7 +13,9 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   return (
     <nav>
-      <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
+      <div
+        className={`${flexBetween} fixed top-0 z-30 w-full py-6 bg-slate-00`}
+      >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             <div className="flex gap-1">
@@ -56,7 +59,9 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
               <p> FAQS</p> */}
 
               <div className={`${flexBetween} gap-8`}>
-                <button>Log in</button>
+                <Link to="/login">
+                  <button>Log in</button>
+                </Link>
                 <button>Try for free</button>
               </div>
             </div>
