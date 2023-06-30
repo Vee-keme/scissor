@@ -6,7 +6,7 @@ import MyUrls from "@/MyURLs/MyUrls";
 import Pricing from "@/components/pricing/Pricing";
 import Analytics from "@/components/analytics/Analytics";
 import Faqs from "@/components/faqs/Faqs";
-type Props = {};
+// type Props = {};
 
 const Home = () => {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(

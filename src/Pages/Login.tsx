@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import google from "../assets/google_logo.png";
 import apple from "../assets/apple_logo.png";
 
-type Props = {};
+// type Props = {};
 
-const Login = (props: Props) => {
-  const navigate = useNavigate();
+const Login = () => {
+  // const navigate = useNavigate();
   return (
     <section className="containers forms" id="Login">
       <div className="w-[100%] flex justify-center items-center absolute">

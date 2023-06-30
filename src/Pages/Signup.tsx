@@ -4,9 +4,9 @@ import google from "../assets/google_logo.png";
 import apple from "../assets/apple_logo.png";
 import { Link } from "react-router-dom";
 
-type Props = {};
+// type Props = {};
 
-const Signup = (props: Props) => {
+const Signup = () => {
   return (
     <section className="w-screen h-screen ">
       <div className="w-[100%] flex justify-center items-center absolute">

@@ -1,7 +1,7 @@
 import "./App.css";
 // import Navbar from "@/components/navbar/Navbar";
-import { useState } from "react";
-import { SelectedPage } from "@/shared/types";
+// import { useState } from "react";
+// import { SelectedPage } from "@/shared/types";
 // import Features from "@/components/features/Features";
 // import Pricing from "@/components/pricing/Pricing";
 // import Analytics from "@/components/analytics/Analytics";
@@ -18,9 +18,9 @@ import { config } from "./config/config";
 initializeApp(config.firebaseConfig);
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.MyURLs
-  );
+  // const [selectedPage, setSelectedPage] = useState<SelectedPage>(
+  //   SelectedPage.MyURLs
+  // );
   return (
     <>
       <BrowserRouter>

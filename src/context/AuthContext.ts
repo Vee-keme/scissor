@@ -1,23 +1,32 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { db, auth, analytics } from "@/firebase.config";
+import {
+  createContext,
+  // useContext,
+  //  useEffect,
+  useState,
+} from "react";
+import {
+  db,
+  auth,
+  //  analytics
+} from "@/firebase.config";
 import {
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
+  // signInWithEmailAndPassword,
+  // signOut,
+  // onAuthStateChanged,
   AuthErrorCodes,
 } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
 import { Context } from "@/shared/types";
 
-type value = {
-  signUp: () => void;
-  error: () => void;
-};
-type UserProviderProps = {
-  value: string;
-  // children: ReactNode
-};
+// type value = {
+//   signUp: () => void;
+//   error: () => void;
+// };
+// type UserProviderProps = {
+//   value: string;
+//   // children: ReactNode
+// };
 
 export const AuthContext = createContext<Context | null>(null);
 
@@ -59,6 +68,7 @@ export function AuthProvider({}) {
       signUp,
       error,
     };
+    value;
   };
   // return(
   //         <AuthContext.Provider value={value} >
