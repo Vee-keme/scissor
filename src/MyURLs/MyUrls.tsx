@@ -1,11 +1,11 @@
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-// import card from "../assets/url_card.png";
-// import dish from "../assets/url_dish.png";
-import cardsvg from "../assets/card.svg";
-import dishsvg from "../assets/dish.svg";
+// import { useState } from "react";
+import card from "../assets/url_card.png";
+import dish from "../assets/url_dish.png";
+// import cardsvg from "../assets/card.svg";
+// import dishsvg from "../assets/dish.svg";
 
 type Props = {
   selectedPage: SelectedPage;
@@ -19,12 +19,12 @@ const MyUrls = ({ setSelectedPage }: Props) => {
   // );
   //
 
-  const flexBetween = "flex items-center justify-between";
+  // const flexBetween = "flex items-center justify-between";
   const flexCenter = "flex items-center justify-center";
   return (
     <section
       id="my urls"
-      className={`w-full h-full relative flex flex-col items-center top-10 self-center md:h-full md:pb-0`}
+      className={`w-full h-full relative flex flex-col items-center self-center md:h-full md:pb-0`}
     >
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.MyURLs)}
@@ -63,12 +63,14 @@ const MyUrls = ({ setSelectedPage }: Props) => {
         </div>
 
         {/*BOXX PART */}
-        <div className="relative flex flex-col items-center">
-          <div className="">
-            <img src={cardsvg} alt="" />
+        <div className="flex items-center flex-col gap-4 mt-4 ">
+          <div className=" ">
+            <img src={card} alt="" />
+            {/* <img src={cardsvg} alt="" /> */}
           </div>
           <div>
-            <img src={dishsvg} alt="" />
+            <img src={dish} alt="" />
+            {/* <img src={dishsvg} alt="" /> */}
           </div>
         </div>
       </motion.div>

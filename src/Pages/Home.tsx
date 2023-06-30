@@ -14,7 +14,7 @@ const Home = () => {
   );
   return (
     <div className="">
-      <section className="app bg-primary-100 w-screen h-screen absolute">
+      <section className="app bg-primary-100 w-screen h-screen">
         <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 
         <MyUrls selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
