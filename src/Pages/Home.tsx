@@ -13,8 +13,8 @@ const Home = () => {
     SelectedPage.MyURLs
   );
   return (
-    <div>
-      <section className="app bg-primary-100 w-screen h-screen">
+    <div className="">
+      <section className="app bg-primary-100 w-screen h-screen absolute">
         <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 
         <MyUrls selectedPage={selectedPage} setSelectedPage={setSelectedPage} />

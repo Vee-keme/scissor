@@ -1,17 +1,21 @@
 import "./App.css";
-import Navbar from "@/components/navbar/Navbar";
+// import Navbar from "@/components/navbar/Navbar";
 import { useState } from "react";
 import { SelectedPage } from "@/shared/types";
-import Features from "@/components/features/Features";
-import Pricing from "@/components/pricing/Pricing";
-import Analytics from "@/components/analytics/Analytics";
-import Faqs from "@/components/faqs/Faqs";
-import MyUrls from "./MyURLs/MyUrls";
+// import Features from "@/components/features/Features";
+// import Pricing from "@/components/pricing/Pricing";
+// import Analytics from "@/components/analytics/Analytics";
+// import Faqs from "@/components/faqs/Faqs";
+// import MyUrls from "./MyURLs/MyUrls";
 import { Routes, Route } from "react-router-dom";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import { BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home";
+import { initializeApp } from "firebase/app";
+import { config } from "./config/config";
+
+initializeApp(config.firebaseConfig);
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
