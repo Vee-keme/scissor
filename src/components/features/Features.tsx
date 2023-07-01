@@ -1,5 +1,7 @@
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
+import linkIcon from "@/assets/link_icon.png";
+// import { whyChose } from "@/assets/whychose";
 
 type Props = {
   selectedPage: SelectedPage;
@@ -60,8 +62,83 @@ const Features = ({ setSelectedPage }: Props) => {
           </div>
 
           {/* WHY CHOSE SCISSOR */}
-          <div className="whychose">
-            <div>why chose scissor</div>
+          <div className="whychosebox flex justify-between items-center gap-5 w-full h-full px-[10%]">
+            <div className="leftbox w-[40%] flex items-start justify-start">
+              <div className="pt-0">
+                <h3>
+                  Why chose <span>Scissors</span>
+                </h3>
+                <p>
+                  Scissors is the hub of everything that has to do with link
+                  your management.We shorten your URLs, allow you creating
+                  custom ones for your personal, business, event usage. Our
+                  swift QR code creation, management and usage tracking with
+                  advanced analytics for all of these is second to none.{" "}
+                </p>
+              </div>
+            </div>
+
+            <div className="rightbox w-[60%] flex items-center justify-center">
+              <div className="centecarditems flex justify-between items-center flex-wrap">
+                {/* {console.log(`&{whyChose: ReactNode}`)} */}
+                <div className="card w-[50%] p-4 ">
+                  <img
+                    src={linkIcon}
+                    alt="link icon"
+                    className="relative  top-0 left-0 pb-5"
+                  />
+                  <h3 className="font-extrabold text-2xl pb-2">
+                    URL Shortening
+                  </h3>
+                  <p>
+                    Scissor allows you to shorten URLs of your business, events.
+                    Shorten your URL at scale, URL redirects.
+                  </p>
+                </div>
+                <div className="card w-[50%] p-4 ">
+                  <img
+                    src={linkIcon}
+                    alt="link icon"
+                    className="relative  top-0 left-0 pb-5"
+                  />
+                  <h3 className="font-extrabold text-2xl pb-2">
+                    URL Shortening
+                  </h3>
+                  <p>
+                    Scissor allows you to shorten URLs of your business, events.
+                    Shorten your URL at scale, URL redirects.
+                  </p>
+                </div>
+                <div className="card w-[50%] p-4 ">
+                  <img
+                    src={linkIcon}
+                    alt="link icon"
+                    className="relative  top-0 left-0 pb-5"
+                  />
+                  <h3 className="font-extrabold text-2xl pb-2">
+                    URL Shortening
+                  </h3>
+                  <p>
+                    Scissor allows you to shorten URLs of your business, events.
+                    Shorten your URL at scale, URL redirects.
+                  </p>
+                </div>
+                <div className="card w-[50%] p-4 ">
+                  <img
+                    src={linkIcon}
+                    alt="link icon"
+                    className="relative  top-0 left-0 pb-5"
+                  />
+                  <h3 className="font-extrabold text-2xl pb-2">
+                    URL Shortening
+                  </h3>
+                  <p>
+                    Scissor allows you to shorten URLs of your business, events.
+                    Shorten your URL at scale, URL redirects.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </motion.div>
