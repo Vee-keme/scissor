@@ -1,5 +1,6 @@
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
+import PlanCard from "./PlanCard";
 type Props = {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
@@ -9,26 +10,54 @@ const Pricing = ({ setSelectedPage }: Props) => {
   return (
     <section id="pricing">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Pricing)}>
-        <h1 className="text-green-900">PRICING</h1>
+        <div className="pricing-text ">
+          <h2 className="text-green-900">A prefect price for all your needs</h2>
+          <h3>
+            From catering for your personal, business, event, social needs, you
+            can be rest assured we have you in mind in our pricing.
+          </h3>
+        </div>
 
-        <p className="text-green-900">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A soluta
-          tempora veniam cumque repellat hic ipsa inventore numquam aut vel,
-          molestiae voluptate ab facilis? Ad, maxime suscipit dolore fuga
-          accusantium officiis reiciendis ab et similique hic, consequatur
-          ducimus eius, temporibus ea illum consectetur dolores quam aliquam.
-          Magnam explicabo voluptates laborum ipsum vero cum dolorum nobis ea
-          ullam id nesciunt, molestias vel laboriosam at. Aut, mollitia. Aut,
-          quam sed explicabo quo ullam eveniet sunt? Quis ex nesciunt dolor
-          quasi in dolorum magnam tempore commodi odit labore sed delectus illo,
-          reprehenderit voluptate possimus a incidunt deleniti ducimus
-          consectetur aliquam, magni quod perspiciatis. Fugit eos tenetur sequi?
-          Expedita nam nihil dicta quos quam velit? Est ab, repellat amet vitae
-          quidem unde autem dolorem libero sed veritatis. Culpa repellendus
-          earum, consectetur expedita esse labore velit sed. Voluptatem ratione
-          numquam odit laborum ipsum suscipit tempore, non fugiat quisquam autem
-          nostrum optio tempora dolor et repudiandae.
-        </p>
+        <div className="pricing-card flex flex-col gap-8 p-10 xl:flex-row">
+          <PlanCard
+            color="#78e3fc"
+            name="Basic"
+            description="Free plan for all users"
+            features={[
+              "Unlimited URL Shortening",
+              "Basic Link Analytics",
+              "Customizable Short Links",
+              "Standard Support",
+              "Ad-supported",
+            ]}
+          />
+          <PlanCard
+            color="#fcd638"
+            name="Professional"
+            description="Ideal for business creators"
+            price="15"
+            features={[
+              "Enhanced Link Analytics",
+              "Custom Branded Domains",
+              "Advanced Link Customization",
+              "Priority Support",
+              "Ad-free Experience",
+            ]}
+          />
+          <PlanCard
+            color="#ffb5ba"
+            name="Teams"
+            description="Share with up to 10 users"
+            price="25"
+            features={[
+              "Team Collaboration",
+              "User Roles and Permissions",
+              "Enhanced Security",
+              "API Access",
+              "Dedicated Account Manager",
+            ]}
+          />
+        </div>
       </motion.div>
     </section>
   );
