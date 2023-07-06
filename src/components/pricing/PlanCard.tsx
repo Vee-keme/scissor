@@ -4,15 +4,12 @@ interface Props {
 
   price?: string;
   features: string[];
-  color: string;
+  color?: string;
 }
 
-const PlanCard = ({ name, description, price, features, color }: Props) => {
+const PlanCard = ({ name, description, price, features }: Props) => {
   return (
-    <div
-      style={{ backgroundColor: color }}
-      className="flex min-h-[428px] w-[320px] flex-col rounded-3xl p-8 "
-    >
+    <div className="flex  flex-col py-8 px-10 bg-white border border-secondary-300 border-opacity-20 rounded-md shadow-xl cursor-pointer ">
       <h1 className="mb-5 text-xl font-medium"> {name}</h1>
       <div className="mb-5 flex items-end text-4xl font-black">
         {price ? (
