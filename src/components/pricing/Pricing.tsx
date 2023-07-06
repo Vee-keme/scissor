@@ -17,46 +17,53 @@ const Pricing = ({ setSelectedPage }: Props) => {
             can be rest assured we have you in mind in our pricing.
           </h3>
         </div>
-
-        <div className="pricing-card flex flex-col gap-8 p-10 xl:flex-row">
-          <PlanCard
-            color="#78e3fc"
-            name="Basic"
-            description="Free plan for all users"
-            features={[
-              "Unlimited URL Shortening",
-              "Basic Link Analytics",
-              "Customizable Short Links",
-              "Standard Support",
-              "Ad-supported",
-            ]}
-          />
-          <PlanCard
-            color="#fcd638"
-            name="Professional"
-            description="Ideal for business creators"
-            price="15"
-            features={[
-              "Enhanced Link Analytics",
-              "Custom Branded Domains",
-              "Advanced Link Customization",
-              "Priority Support",
-              "Ad-free Experience",
-            ]}
-          />
-          <PlanCard
-            color="#ffb5ba"
-            name="Teams"
-            description="Share with up to 10 users"
-            price="25"
-            features={[
-              "Team Collaboration",
-              "User Roles and Permissions",
-              "Enhanced Security",
-              "API Access",
-              "Dedicated Account Manager",
-            ]}
-          />
+        <div className="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
+          <div className="pricing-card-container grid lg:grid-cols-3 gap-12 lg:gap-0 ">
+            <div className="w-full max-w-md mx-auto">
+              <PlanCard
+                color="#78e3fc"
+                name="Basic"
+                description="Free plan for all users"
+                features={[
+                  "Unlimited URL Shortening",
+                  "Basic Link Analytics",
+                  "Customizable Short Links",
+                  "Standard Support",
+                  "Ad-supported",
+                ]}
+              />
+            </div>
+            <div className="w-full max-w-md mx-auto">
+              <PlanCard
+                color="#fcd638"
+                name="Professional"
+                description="Ideal for business creators"
+                price="15"
+                features={[
+                  "Enhanced Link Analytics",
+                  "Custom Branded Domains",
+                  "Advanced Link Customization",
+                  "Priority Support",
+                  "Ad-free Experience",
+                ]}
+              />
+            </div>
+            <div className="w-full max-w-md mx-auto">
+              <PlanCard
+                color="#ffb5ba"
+                name="Teams"
+                description="Share with up to 10 users"
+                price="25"
+                features={[
+                  "Team Collaboration",
+                  "User Roles and Permissions",
+                  "Enhanced Security",
+                  "API Access",
+                  "Dedicated Account Manager",
+                ]}
+              />
+            </div>
+          </div>
         </div>
       </motion.div>
     </section>
