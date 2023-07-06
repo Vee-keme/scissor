@@ -1,5 +1,5 @@
 // import { ArrowDownIcon } from "@heroicons/react/20/solid";
-
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 type Props = {
@@ -23,12 +23,19 @@ const singleFaq = ({ question, answer }: Props) => {
           <span className="text-3xl">+</span>
         )}
       </div>
-
-      {show && (
-        <div className="overflow-clip">
-          <p className="text-sm md:text-base ">{answer}</p>
-        </div>
-      )}
+      <AnimatePresence>
+        {show && (
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
+            transition={{ duration: 0.4 }}
+            className="overflow-clip"
+          >
+            <p className="text-sm md:text-base ">{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
