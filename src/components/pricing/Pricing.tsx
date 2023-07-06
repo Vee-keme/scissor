@@ -46,6 +46,7 @@ const Pricing = ({ setSelectedPage }: Props) => {
                   "Priority Support",
                   "Ad-free Experience",
                 ]}
+                featured={true}
               />
             </div>
             <div className="w-full max-w-md mx-auto">
