@@ -32,7 +32,7 @@ const singleFaq = ({ question, answer }: Props) => {
             transition={{ duration: 0.4 }}
             className="overflow-clip"
           >
-            <p className="text-sm md:text-base ">{answer}</p>
+            <p className="text-sm md:text-base leading-loose py-3">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
