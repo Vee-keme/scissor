@@ -9,14 +9,26 @@ type Props = {
 const Pricing = ({ setSelectedPage }: Props) => {
   return (
     <section id="pricing">
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Pricing)}>
-        <div className="pricing-text ">
-          <h2 className="text-green-900">A prefect price for all your needs</h2>
-          <h3>
-            From catering for your personal, business, event, social needs, you
-            can be rest assured we have you in mind in our pricing.
-          </h3>
+      <motion.div
+        onViewportEnter={() => setSelectedPage(SelectedPage.Pricing)}
+        className="flex flex-col items-center justify-between"
+      >
+        <div className="pricing-text flex flex-col items-center mx-auto my-4 p-4 w-[60%]">
+          <div className="w-full flex items-center justify-center gap-1">
+            <div className="h-10 w-1 bg-gradient-to-b from-black to-transparent"></div>
+            <h2 className="font-bold text-3xl p-2 text-center">
+              A <span className="text-secondary-300">perfect price</span> for
+              all your needs
+            </h2>
+          </div>
+          <div className="w-[70%] p-1">
+            <h3 className="text-sm text-center">
+              From catering for your personal, business, event, social needs,
+              you can be rest assured we have you in mind in our pricing.
+            </h3>
+          </div>
         </div>
+
         <div className="h-full px-6 py-12 lg:flex lg:justify-center lg:items-center">
           <div className="pricing-card-container grid lg:grid-cols-3 gap-12 lg:gap-0 ">
             <div className="w-full max-w-md mx-auto">

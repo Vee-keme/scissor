@@ -15,7 +15,7 @@ const singleFaq = ({ question, answer }: Props) => {
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setShow(!show)}
       >
-        <h1 className="text-xl font-semibold">{question}</h1>
+        <h1 className="text-xl font-medium">{question}</h1>
         {/* <ArrowDownIcon className="w-6 h-6" /> */}
         {show ? (
           <span className="text-3xl">-</span>

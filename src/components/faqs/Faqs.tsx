@@ -23,7 +23,10 @@ const Faqs = ({ setSelectedPage }: Props) => {
         onViewportEnter={() => setSelectedPage(SelectedPage.FAQs)}
         className="w-full h-full flex flex-col items-center justify-center py-10"
       >
-        <h1 className="text-4xl">FAQS</h1>
+        <div className="flex items-center gap-2">
+          <div className="h-10 w-1 bg-gradient-to-b from-black to-transparent"></div>
+          <h1 className="text-4xl">FAQS</h1>
+        </div>
         <div className="max-w-[800px] w-full mx-auto mt-20 flex flex-col gap-4">
           {faqs.map((faq, i) => {
             const { question, answer } = faq;
