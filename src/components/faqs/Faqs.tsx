@@ -13,7 +13,7 @@ type Props = {
 const Faqs = ({ setSelectedPage }: Props) => {
   return (
     <section id="faqs" className="w-full h-full p-10 relative">
-      <div className="absolute bottom-20 right-0  w-1/4 h-1/4">
+      <div className="absolute bottom-0 right-0  w-1/4 h-1/4">
         <img src={faqsRight} alt="faqs img" />
       </div>
       <div className="absolute top-0 left-0 w-1/4 h-1/4">

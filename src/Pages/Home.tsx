@@ -33,7 +33,10 @@ const Home = () => {
           setSelectedPage={setSelectedPage}
         />
         <Faqs selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-
+        <section className="w-full h-[20vh] flex items-center justify-between flex-col bg-background-blue">
+          <h2 className="text-2xl pb-4">Revolutionizing Link Optimization</h2>
+          <button>Get Started</button>
+        </section>
         <Footer />
       </section>
     </div>

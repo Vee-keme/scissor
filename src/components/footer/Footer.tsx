@@ -2,7 +2,7 @@ import { foooterText } from "@/assets/dataset";
 
 const Footer = () => {
   return (
-    <section className="w-full h-full flex items-center justify-center relative">
+    <section className="w-full h-full flex items-center justify-center relative p-10 m-10">
       <div className="footer-container h-full w-[95%] gap-10 py-10 px-20 flex justify-between">
         <div className="left">
           <div>
