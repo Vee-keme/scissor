@@ -6,6 +6,7 @@ import MyUrls from "@/MyURLs/MyUrls";
 import Pricing from "@/components/pricing/Pricing";
 import Analytics from "@/components/analytics/Analytics";
 import Faqs from "@/components/faqs/Faqs";
+import Footer from "@/components/footer/Footer";
 // type Props = {};
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
   );
   return (
     <div className="">
-      <section className="app bg-primary-100 w-screen h-screen">
+      <section className="app bg-primary-100 w-screen h-screen relative">
         <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 
         <MyUrls selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
@@ -32,6 +33,8 @@ const Home = () => {
           setSelectedPage={setSelectedPage}
         />
         <Faqs selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+
+        <Footer />
       </section>
     </div>
   );

@@ -85,3 +85,66 @@ export const faqs = [
       "Currently there is no public API available for developer use. Rest assured the team is working on a public API",
   },
 ];
+
+export const foooterText = [
+  {
+    heading: "Why Scissor?",
+    options: ["Scissor 101", "Integrations & API", "Pricing"],
+  },
+  {
+    heading: "Solutions",
+    options: [
+      "Social Media",
+      "Digital Marketing",
+      "Customer Service",
+      "For Developers",
+    ],
+  },
+  {
+    heading: "Products",
+    options: ["Link Management", "QR Codes", "Link-in-bio"],
+  },
+  {
+    heading: "Company",
+    options: [
+      "About Scissor",
+      "Careers",
+      "Partners",
+      "Press",
+      "Contact",
+      "Reviews",
+    ],
+  },
+  {
+    heading: "Resources",
+    options: [
+      "Blog",
+      "Resource Library",
+      "Developers",
+      "App Connectors",
+      "Support",
+      "Trust Center",
+      "Browser Extension",
+      "Mobile App",
+    ],
+  },
+  {
+    heading: "Features",
+    options: [
+      "Branded Links",
+      "Mobile Links",
+      "Campaign",
+      "Management & Analytics",
+      "QR Code generation",
+    ],
+  },
+  {
+    heading: "Legal",
+    options: [
+      "Privacy Policy",
+      "Cookie Policy",
+      "Terms of Service",
+      "Acceptable Use Policy Code of Conduct",
+    ],
+  },
+];
