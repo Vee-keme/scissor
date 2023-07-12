@@ -33,9 +33,11 @@ const Home = () => {
           setSelectedPage={setSelectedPage}
         />
         <Faqs selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-        <section className="w-full h-[20vh] flex items-center justify-between flex-col bg-background-blue">
+        <section className=" relative w-full h-full flex items-center justify-between flex-col bg-background-blue py-10">
           <h2 className="text-2xl pb-4">Revolutionizing Link Optimization</h2>
-          <button>Get Started</button>
+          <button className="rounded-full  border border-blue-700 py-2.5 px-8  text-white focus:outline-none focus:z-10 bg-blue-700 mr-4 text-sm font-medium hover:text-blue-500 hover:bg-white transition-all duration-700 ease-in-out">
+            Get Started
+          </button>
         </section>
         <Footer />
       </section>

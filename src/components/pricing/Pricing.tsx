@@ -78,6 +78,18 @@ const Pricing = ({ setSelectedPage }: Props) => {
             </div>
           </div>
         </div>
+
+        <div
+          className="buttons p-10 my-4
+        "
+        >
+          <button className="rounded-full  border border-blue-700 py-2.5 px-8  text-white focus:outline-none focus:z-10 bg-blue-700 mr-4 text-sm font-medium hover:text-blue-500 hover:bg-white">
+            Get Custom Pricing
+          </button>
+          <button className="rounded-full  border border-blue-700 py-2.5 px-8  text-white focus:outline-none focus:z-10 bg-blue-700 mr-4 text-sm font-medium hover:text-blue-500 hover:bg-white">
+            Select Pricing
+          </button>
+        </div>
       </motion.div>
     </section>
   );
