@@ -17,11 +17,11 @@ const Features = ({ setSelectedPage }: Props) => {
       >
         <div className="itemsContainer flex flex-col w-full ">
           {/* TOP ITEMS */}
-          <div className="top-items bg-red-300 w-full px-[10%] py-10 flex justify-between  gap-10">
-            <div>
-              <h3>One Stop.</h3>
+          <div className="top-items bg-[#F9FBFD] w-full px-[10%] py-10 flex justify-between  gap-10">
+            <div className="text-4xl font-bold p-2 w-[40%]">
+              <h3 className="">One Stop.</h3>
               <h3>
-                Four <span>Possibilities.</span>
+                Four <span className="text-secondary-300">Possibilities.</span>
               </h3>
             </div>
             <div>
@@ -41,32 +41,36 @@ const Features = ({ setSelectedPage }: Props) => {
                   <td className="text-center">App integrations</td>
                 </tr>
               </table> */}
-              <div className="flex justify-between items-center">
-                <div>
-                  <h3>3M</h3>
-                  <p>Active users</p>
+              <div className="flex justify-between items-center w-full gap-3 ">
+                <div className="flex-1 p-2 text-left h-4">
+                  <h3 className="text-3xl font-semibold">3M</h3>
+                  <p className="font-bold">Active users</p>
                 </div>
 
-                <div>
-                  <h3>60M</h3> <p>Links & QR code created</p>
+                <div className="flex-1 p-2 text-left h-4">
+                  <h3 className="text-3xl font-semibold">60M</h3>{" "}
+                  <p className="font-bold">Links & QR code created</p>
                 </div>
-                <div>
-                  {" "}
-                  <h3>1B</h3> <p>Clicked and Scanned connections</p>
+
+                <div className="flex-1 p-2 text-left h-4">
+                  <h3 className="text-3xl font-semibold">1B</h3>{" "}
+                  <p className="font-bold">Clicked & Scanned connections</p>
                 </div>
-                <div>
-                  <h3>300K</h3> <p>App integrations</p>
+
+                <div className="flex-1 p-2 text-left h-4">
+                  <h3 className="text-3xl font-semibold">300K</h3>
+                  <p className="font-bold">App integrations</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* WHY CHOSE SCISSOR */}
-          <div className="whychosebox flex justify-between items-center gap-5 w-full h-full px-[10%]">
+          <div className="whychosebox flex justify-between items-center gap-5 w-full h-full px-[10%] bg-white">
             <div className="leftbox w-[40%] flex items-start justify-start">
               <div className="pt-0">
                 <h3>
-                  Why chose <span>Scissors</span>
+                  Why choose <span>Scissors</span>
                 </h3>
                 <p>
                   Scissors is the hub of everything that has to do with link

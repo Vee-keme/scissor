@@ -15,7 +15,7 @@ const Home = () => {
   );
   return (
     <div className="">
-      <section className="app bg-primary-100 w-screen h-screen relative">
+      <section className="app bg-primary-100 w-screen h-screen overflow-hidden ">
         <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 
         <MyUrls selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
@@ -33,8 +33,10 @@ const Home = () => {
           setSelectedPage={setSelectedPage}
         />
         <Faqs selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
-        <section className=" relative w-full h-full flex items-center justify-between flex-col bg-background-blue py-10">
-          <h2 className="text-2xl pb-4">Revolutionizing Link Optimization</h2>
+        <section className=" relative w-full h-full flex items-center justify-between flex-col bg-background-blue py-10 text-white">
+          <h2 className="text-4xl pb-6 font-semibold">
+            Revolutionizing Link Optimization
+          </h2>
           <button className="rounded-full  border border-blue-700 py-2.5 px-8  text-white focus:outline-none focus:z-10 bg-blue-700 mr-4 text-sm font-medium hover:text-blue-500 hover:bg-white transition-all duration-700 ease-in-out">
             Get Started
           </button>
