@@ -83,10 +83,10 @@ const Pricing = ({ setSelectedPage }: Props) => {
           className="buttons p-10 my-4
         "
         >
-          <button className="rounded-full  border border-blue-700 py-2.5 px-8  text-white focus:outline-none focus:z-10 bg-blue-700 mr-4 text-sm font-medium hover:text-blue-500 hover:bg-white">
+          <button className="rounded-full  border border-blue-600 py-2.5 px-8  text-blue-600 focus:outline-none focus:z-10 mr-4 text-sm font-medium hover:bg-blue-600 hover:text-white">
             Get Custom Pricing
           </button>
-          <button className="rounded-full  border border-blue-700 py-2.5 px-8  text-white focus:outline-none focus:z-10 bg-blue-700 mr-4 text-sm font-medium hover:text-blue-500 hover:bg-white">
+          <button className="rounded-full  border border-blue-600 py-2.5 px-8  text-white focus:outline-none focus:z-10 bg-blue-600 mr-4 text-sm font-medium hover:text-blue-600 hover:bg-white">
             Select Pricing
           </button>
         </div>
