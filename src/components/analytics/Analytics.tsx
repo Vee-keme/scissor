@@ -23,12 +23,20 @@ const Analytics = ({ setSelectedPage }: Props) => {
         className="bg-background-blue p-20 relative"
       >
         {/* find solution to the positioning */}
-        <div className=" absolute top-0 left-0 h-fit">
-          <img src={analyticsLeft} alt="waves" />
+        <div>
+          <img
+            src={analyticsLeft}
+            alt="waves"
+            className=" absolute top-0 left-0 h-full w-[70%]"
+          />
         </div>
 
-        <div className=" absolute bottom-0 right-0 w-1/4 h-1/4">
-          <img src={analyticsRight} alt="waves" />
+        <div>
+          <img
+            src={analyticsRight}
+            alt="waves"
+            className=" absolute bottom-0 right-0 h-[90%] w-[50%] "
+          />
         </div>
 
         <div className="formdiv flex justify-center ">
