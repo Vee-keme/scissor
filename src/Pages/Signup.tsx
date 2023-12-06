@@ -1,12 +1,36 @@
-// import React from "react";
+import { useState } from "react";
 // import { createContext, useContext } from "react";
 import google from "../assets/google_logo.png";
 import apple from "../assets/apple_logo.png";
 import { Link } from "react-router-dom";
 
+import { auth } from "@/firebase.config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
 // type Props = {};
 
 const Signup = () => {
+  const [email, setEmail] = useState<any>();
+  const [password, setPassword] = useState<any>();
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    try {
+      const userCredentials = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = userCredentials.user;
+      // localStorage.setItem("token", user.accessToken);
+      localStorage.setItem("user", JSON.stringify(user));
+      console.log(userCredentials);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <section className="w-screen h-screen ">
       <div className="w-[100%] flex justify-center items-center absolute">
@@ -39,44 +63,53 @@ const Signup = () => {
           </div>
 
           {/* SIGN UP FORM */}
-          <div className="signupform w-[90%] relative">
-            <div className="flex justify-center items-center flex-col gap-6 ">
-              <input
-                type="text"
-                name="text"
-                placeholder="Username"
-                className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
-              />
-              <input
-                type="text"
-                name="text"
-                placeholder="Email"
-                className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
-              />
-              <input
-                type="password"
-                name="text"
-                placeholder="Password"
-                className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
-              />
-              <input
-                type="password"
-                name="text"
-                placeholder="Retype Password"
-                className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
-              />
+          <form onSubmit={handleSubmit}>
+            <div className="signupform w-[90%] relative">
+              <div className="flex justify-center items-center flex-col gap-6 ">
+                {/* <input
+                  type="text"
+                  name="text"
+                  placeholder="Username"
+                  className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
+                /> */}
+                <input
+                  type="text"
+                  name="text"
+                  placeholder="Email"
+                  className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <input
+                  type="password"
+                  name="text"
+                  placeholder="Password"
+                  className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+                {/* <input
+                  type="password"
+                  name="text"
+                  placeholder="Retype Password"
+                  className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
+                /> */}
 
-              <p className="text-xs text-gray-500">
-                6 or more characters, one number, one uppercase & one lower
-                case.
-              </p>
+                <p className="text-xs text-gray-500">
+                  6 or more characters, one number, one uppercase & one lower
+                  case.
+                </p>
 
-              <button className="w-[100%] bg-secondary-300 py-3 px-5 flex justify-center gap-2 rounded-full text-center text-primary-100 ">
-                Sign up with Email
-              </button>
+                <button className="w-[100%] bg-secondary-300 py-3 px-5 flex justify-center gap-2 rounded-full text-center text-primary-100 ">
+                  Sign up with Email
+                </button>
+              </div>
             </div>
-          </div>
-
+          </form>
           {/* OTHER STUFF */}
           <div className="flex items-center flex-col gap-6 w-[70%]">
             <h4>

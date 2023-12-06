@@ -59,7 +59,7 @@ const Login = () => {
               </p>
 
               <button className="w-[100%] bg-secondary-300 py-3 px-5 flex justify-center gap-2 rounded-full text-center text-primary-100 ">
-                Sign up with Email
+                Log in with Email
               </button>
             </div>
           </div>

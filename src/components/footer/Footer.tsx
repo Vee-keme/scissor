@@ -47,8 +47,10 @@ const Footer = () => {
                   <h4 className="font-bold text-xl pb-2 cursor-pointer">
                     {item.heading}
                   </h4>
-                  {item.options.map((text) => (
-                    <p className="cursor-pointer text-sm leading-6">{text}</p>
+                  {item.options.map((text, index) => (
+                    <p key={index} className="cursor-pointer text-sm leading-6">
+                      {text}
+                    </p>
                   ))}
                 </div>
               );
