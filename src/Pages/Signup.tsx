@@ -10,8 +10,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 // type Props = {};
 
 const Signup = () => {
-  const [email, setEmail] = useState<any>();
-  const [password, setPassword] = useState<any>();
   const [userCredentials, setUserCredentials] = useState<any>();
   console.log(userCredentials);
 
@@ -87,7 +85,6 @@ const Signup = () => {
                   name="email"
                   placeholder="Email"
                   className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
-                  value={email}
                   onChange={(e) => {
                     // setEmail(e.target.value);
                     handleCredentials(e);
@@ -98,7 +95,6 @@ const Signup = () => {
                   name="password"
                   placeholder="Password"
                   className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
-                  value={password}
                   onChange={(e) => {
                     // setPassword(e.target.value);
                     handleCredentials(e);
