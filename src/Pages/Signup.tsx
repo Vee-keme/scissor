@@ -12,23 +12,33 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 const Signup = () => {
   const [email, setEmail] = useState<any>();
   const [password, setPassword] = useState<any>();
+  const [userCredentials, setUserCredentials] = useState<any>();
+  console.log(userCredentials);
+
+  const handleCredentials = (e: any) => {
+    setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    try {
-      const userCredentials = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
 
-      const user = userCredentials.user;
-      // localStorage.setItem("token", user.accessToken);
-      localStorage.setItem("user", JSON.stringify(user));
-      console.log(userCredentials);
-    } catch (err) {
-      console.log(err);
-    }
+    createUserWithEmailAndPassword(
+      auth,
+      userCredentials.email,
+      userCredentials.password
+    )
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        console.log(user);
+        // ...
+      })
+      .catch((error: any) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("thisss", errorCode, errorMessage);
+        // ..
+      });
   };
 
   return (
@@ -63,7 +73,7 @@ const Signup = () => {
           </div>
 
           {/* SIGN UP FORM */}
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className="signupform w-[90%] relative">
               <div className="flex justify-center items-center flex-col gap-6 ">
                 {/* <input
@@ -74,22 +84,24 @@ const Signup = () => {
                 /> */}
                 <input
                   type="text"
-                  name="text"
+                  name="email"
                   placeholder="Email"
                   className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
                   value={email}
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    // setEmail(e.target.value);
+                    handleCredentials(e);
                   }}
                 />
                 <input
                   type="password"
-                  name="text"
+                  name="password"
                   placeholder="Password"
                   className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
                   value={password}
                   onChange={(e) => {
-                    setPassword(e.target.value);
+                    // setPassword(e.target.value);
+                    handleCredentials(e);
                   }}
                 />
                 {/* <input
@@ -104,7 +116,10 @@ const Signup = () => {
                   case.
                 </p>
 
-                <button className="w-[100%] bg-secondary-300 py-3 px-5 flex justify-center gap-2 rounded-full text-center text-primary-100 ">
+                <button
+                  className="w-[100%] bg-secondary-300 py-3 px-5 flex justify-center gap-2 rounded-full text-center text-primary-100 "
+                  onClick={(e) => handleSubmit(e)}
+                >
                   Sign up with Email
                 </button>
               </div>

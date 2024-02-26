@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 import google from "../assets/google_logo.png";
 import apple from "../assets/apple_logo.png";
+import { db } from "@/firebase.config";
+import { doc, setDoc } from "firebase/firestore";
 
 // type Props = {};
 
