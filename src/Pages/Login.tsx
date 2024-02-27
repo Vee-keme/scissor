@@ -1,14 +1,39 @@
 // import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import google from "../assets/google_logo.png";
 import apple from "../assets/apple_logo.png";
-import { db } from "@/firebase.config";
+import { db, auth } from "@/firebase.config";
 import { doc, setDoc } from "firebase/firestore";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 // type Props = {};
 
 const Login = () => {
   // const navigate = useNavigate();
+  const [userCredentials, setUserCredentials] = useState<any>();
+  const [error, setError] = useState<any>("");
+
+  const handleCredentials = (e: any) => {
+    setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = (e: any) => {
+    e.preventDefault();
+
+    signInWithEmailAndPassword(
+      auth,
+      userCredentials?.email,
+      userCredentials?.password
+    )
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
   return (
     <section className="containers forms" id="Login">
       <div className="w-[100%] flex justify-center items-center absolute">
@@ -41,30 +66,47 @@ const Login = () => {
           </div>
 
           {/* SIGN UP FORM */}
-          <div className="signupform w-[90%] relative">
-            <div className="flex justify-center items-center flex-col gap-6 ">
-              <input
-                type="text"
-                name="text"
-                placeholder="Email address or Username"
-                className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
-              />
-              <input
-                type="password"
-                name="text"
-                placeholder="Password"
-                className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
-              />
+          <form>
+            <div className="signupform w-[90%] relative">
+              <div className="flex justify-center items-center flex-col gap-6 ">
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email address or Username"
+                  className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
+                  onChange={(e) => {
+                    handleCredentials(e);
+                  }}
+                />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  className="w-[100%] border-2 border-secondary-300 px-2 py-3 rounded-lg"
+                  onChange={(e) => {
+                    handleCredentials(e);
+                  }}
+                />
 
-              <p className="text-sm text-secondary-300">
-                Forgot your password?
-              </p>
+                <p className="text-sm text-secondary-300">
+                  Forgot your password?
+                </p>
 
-              <button className="w-[100%] bg-secondary-300 py-3 px-5 flex justify-center gap-2 rounded-full text-center text-primary-100 ">
-                Log in with Email
-              </button>
+                <button
+                  className="w-[100%] bg-secondary-300 py-3 px-5 flex justify-center gap-2 rounded-full text-center text-primary-100 "
+                  onClick={(e) => handleLogin(e)}
+                >
+                  Log in with Email
+                </button>
+              </div>
+
+              {error && (
+                <div className="block text-center text-red-600 text-xs">
+                  {error}
+                </div>
+              )}
             </div>
-          </div>
+          </form>
 
           {/* OTHER STUFF */}
           <div className="flex items-center flex-col gap-6 w-[70%]">

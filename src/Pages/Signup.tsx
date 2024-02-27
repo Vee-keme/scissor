@@ -11,9 +11,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Signup = () => {
   const [userCredentials, setUserCredentials] = useState<any>();
-  console.log(userCredentials);
+  const [error, setError] = useState<any>("");
 
   const handleCredentials = (e: any) => {
+    setError("");
     setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
   };
 
@@ -26,16 +27,12 @@ const Signup = () => {
       userCredentials.password
     )
       .then((userCredential) => {
-        // Signed up
         const user = userCredential.user;
-        console.log(user);
-        // ...
       })
       .catch((error: any) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log("thisss", errorCode, errorMessage);
-        // ..
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        setError(error.message);
       });
   };
 
@@ -119,6 +116,12 @@ const Signup = () => {
                   Sign up with Email
                 </button>
               </div>
+
+              {error && (
+                <div className="block text-center text-red-600 text-xs">
+                  {error}
+                </div>
+              )}
             </div>
           </form>
           {/* OTHER STUFF */}
