@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { createContext, useContext } from "react";
 import google from "../assets/google_logo.png";
 import apple from "../assets/apple_logo.png";
@@ -10,6 +11,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 // type Props = {};
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [userCredentials, setUserCredentials] = useState<any>();
   const [error, setError] = useState<any>("");
 
@@ -26,8 +28,10 @@ const Signup = () => {
       userCredentials.email,
       userCredentials.password
     )
-      .then((userCredential) => {
+      .then((userCredential: any) => {
         const user = userCredential.user;
+        console.log(user);
+        navigate("/login");
       })
       .catch((error: any) => {
         // const errorCode = error.code;

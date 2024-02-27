@@ -1,16 +1,21 @@
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import google from "../assets/google_logo.png";
 import apple from "../assets/apple_logo.png";
-import { db, auth } from "@/firebase.config";
-import { doc, setDoc } from "firebase/firestore";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/firebase.config";
+// import { db } from "@/firebase.config";
+// import { doc, setDoc } from "firebase/firestore";
+import {
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 // type Props = {};
 
 const Login = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+
   const [userCredentials, setUserCredentials] = useState<any>();
   const [error, setError] = useState<any>("");
 
@@ -29,11 +34,19 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
+        navigate("/");
       })
       .catch((error) => {
         setError(error.message);
       });
   };
+
+  const handlePasswordReset = () => {
+    const email: any = prompt("Please enter your email");
+    sendPasswordResetEmail(auth, email);
+    alert("Check mail for password reset instructions");
+  };
+
   return (
     <section className="containers forms" id="Login">
       <div className="w-[100%] flex justify-center items-center absolute">
@@ -88,7 +101,10 @@ const Login = () => {
                   }}
                 />
 
-                <p className="text-sm text-secondary-300">
+                <p
+                  className="text-sm text-secondary-300 cursor-pointer"
+                  onClick={handlePasswordReset}
+                >
                   Forgot your password?
                 </p>
 
