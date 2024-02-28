@@ -17,7 +17,7 @@ import {
   AuthErrorCodes,
 } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
-import { Context } from "@/shared/types";
+// import { Context } from "@/shared/types";
 
 // type value = {
 //   signUp: () => void;
@@ -28,9 +28,13 @@ import { Context } from "@/shared/types";
 //   // children: ReactNode
 // };
 
-export const AuthContext = createContext<Context | null>(null);
+export interface Context {
+  signUp: (email: string, password: string, username: string) => void;
+  error: string | boolean;
+}
 
-export function AuthProvider({}) {
+export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const AuthContext = createContext<Context | null>(null);
   const [error, setError] = useState<boolean | string>(false);
 
   const signUp = async (email: string, password: string, username: string) => {
@@ -64,15 +68,12 @@ export function AuthProvider({}) {
           setError(errorMessage);
         }
       });
-    const value = {
-      signUp,
-      error,
-    };
-    value;
   };
-  // return(
-  //         <AuthContext.Provider value={value} >
-  //             {children}
-  //         </AuthContext.Provider>
-  //     )
+
+  const value = {
+    signUp,
+    error,
+  };
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
