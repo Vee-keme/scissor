@@ -15,6 +15,8 @@ import Home from "./Pages/Home";
 import { initializeApp } from "firebase/app";
 import { config } from "./config/config";
 
+import { AuthProvider } from "./context/AuthContext.tsx";
+
 initializeApp(config.firebaseConfig);
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
   //   SelectedPage.MyURLs
   // );
   return (
-    <>
+    <AuthProvider>
       <BrowserRouter>
         {
           <Routes>
@@ -61,7 +63,7 @@ function App() {
           // </section>
         }
       </BrowserRouter>
-    </>
+    </AuthProvider>
   );
 }
 

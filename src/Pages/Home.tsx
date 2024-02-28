@@ -1,5 +1,5 @@
 import { SelectedPage } from "@/shared/types";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import Features from "@/components/features/Features";
 import MyUrls from "@/MyURLs/MyUrls";
@@ -9,9 +9,18 @@ import Faqs from "@/components/faqs/Faqs";
 import Footer from "@/components/footer/Footer";
 import leftImage from "@/assets/revolutionizing-left.png";
 import rightImage from "@/assets/revolutionizing-right.png";
+import { AuthContext } from "@/context/AuthContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase.config";
 // type Props = {};
 
 const Home = () => {
+  const { currentUser } = useContext(AuthContext);
+  // const [username, setUsername] = useState("");
+  if (currentUser) console.log(`this is the current user: ${currentUser}`);
+
+  // const currentUser = (useContext(AuthContext) as AuthContextType).currentUser;
+
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.MyURLs
   );
@@ -26,6 +35,20 @@ const Home = () => {
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
         />
+        {currentUser && (
+          <div>
+            <span>this is temporary</span>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                signOut(auth);
+                console.log("we got here");
+              }}
+            >
+              <h2>sign out</h2>
+            </button>
+          </div>
+        )}
         <Pricing
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}

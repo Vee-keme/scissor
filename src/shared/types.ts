@@ -7,7 +7,7 @@ export enum SelectedPage {
 }
 
 export type user = {
-  username: string;
+  username?: string;
   email: string;
   password: string;
 };
