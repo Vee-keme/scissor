@@ -1,7 +1,11 @@
 // import logo from "@/assets/logo.png";
+import { useContext } from "react";
 import Links from "./Links";
 import { SelectedPage } from "@/shared/types";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase.config";
+import { AuthContext } from "@/context/AuthContext";
 
 type Props = {
   selectedPage: SelectedPage;
@@ -9,6 +13,7 @@ type Props = {
 };
 
 const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+  const { currentUser } = useContext(AuthContext);
   const flexBetween = "flex items-center justify-between";
   return (
     <nav className="">
@@ -84,9 +89,20 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
                 <Link to="/login">
                   <button className="text-secondary-300 ">Log in</button>
                 </Link>
-                <button className="text-white bg-secondary-300 py-2 px-4 rounded-full">
-                  Try for free
-                </button>
+
+                {currentUser && (
+                  <div>
+                    <button
+                      className="text-white bg-secondary-300 py-2 px-4 rounded-full"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        signOut(auth);
+                      }}
+                    >
+                      Dashboard/SO
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
