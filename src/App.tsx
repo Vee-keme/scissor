@@ -31,6 +31,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<></>} />
           </Routes>
           // ) && (
           // <section className="app bg-primary-100 w-screen h-screen">

@@ -99,7 +99,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
                         signOut(auth);
                       }}
                     >
-                      Dashboard/SO
+                      <Link to="/dashboard">Dashboard/SO</Link>
                     </button>
                   </div>
                 )}
