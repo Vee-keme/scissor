@@ -16,6 +16,7 @@ import { initializeApp } from "firebase/app";
 import { config } from "./config/config";
 
 import { AuthProvider } from "./context/AuthContext.tsx";
+import Dashboard from "./Pages/Dashboard.tsx";
 
 initializeApp(config.firebaseConfig);
 
@@ -31,7 +32,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<></>} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
           // ) && (
           // <section className="app bg-primary-100 w-screen h-screen">
